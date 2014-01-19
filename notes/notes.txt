@@ -1,0 +1,51 @@
+1. Iteration 1: Creating the Initial TrackStar Application:
+
+	- download Yii 1.1: http://www.yiiframework.com/download/
+	- copy the extracted Yii source to webroot: e.g c:\xampp\htdocs
+	- create the application from the webroot: e.g yii\framework\yiic webapp trackstar
+	- app URL: http://localhost/trackstar/
+	- configure database: 'protected/congig/main.php', 'components' key
+	- configure URL manager for clean URL: 'protected/congig/main.php', 'components' => urlManager
+
+2. Iteration 2: Project CRUD:
+
+	- table name should be prefixed with 'tbl_'
+	
+	- enable Gii tool:
+		'protected/congig/main.php', 'modules' key
+	
+	- Gii URL: 
+		http://localhost/trackstar/index.php/gii
+
+	- generate Model with Gii: -> 'Model Generator' tool
+		Database Connection: db
+		Table Prefix: tbl_
+		Table Name: tbl_project
+		Model Class: Project
+
+		generated code: 
+
+			'protected/models/Project.php'
+
+	- generate scaffold with Gii: 'Crud Generator' tool
+		Model Class: Project
+		Controller ID: project
+
+		generated code:
+
+			'protected/controllers/ProjectController.php'
+			'protected/views/project/_form.php'
+			'protected/viewsproject/_search.php'
+			'protected/views/project/_view.php'
+			'protected/views/project/admin.php'
+			'protected/views/project/create.php'
+			'protected/views/project/index.php'
+			'protected/views/project/update.php'
+			'protected/views/project/view.php'
+
+		app URL:
+
+			http://localhost/trackstar/index.php/project
+
+	- validation:
+		validation took place inside models: 'app/Models/Project.php' on the 'rules()' method
